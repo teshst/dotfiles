@@ -5,41 +5,55 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.kernelParams = ["nohibernate" "zfs.zfs_arc_max=12884901888"];
+  boot.kernelParams = [ "nohibernate" "zfs.zfs_arc_max=12884901888" ];
   boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "rpool/root";
+    {
+      device = "rpool/local/root";
       fsType = "zfs";
     };
 
-  boot.initrd.luks.devices."crypt" = 
-   {device = "/dev/disk/by-uuid/809605c2-f209-4b35-adc3-da2590d9b1fd";
-    preLVM = true;
-   };
+  boot.initrd.luks.devices."crypt" =
+    {
+      device = "/dev/disk/by-uuid/809605c2-f209-4b35-adc3-da2590d9b1fd";
+      preLVM = true;
+    };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/D682-66E8";
+    {
+      device = "/dev/disk/by-uuid/D682-66E8";
       fsType = "vfat";
-      options = ["noatime"];
+      options = [ "noatime" ];
     };
 
   fileSystems."/nix" =
-    { device = "rpool/nix";
+    {
+      device = "rpool/local/nix";
       fsType = "zfs";
     };
 
-  fileSystems."/persist" =
-    { device = "rpool/persist";
+  fileSystems."/home" =
+    {
+      device = "rpool/safe/home";
       fsType = "zfs";
-      options = ["noatime"];
+      options = [ "noatime" ];
+      neededForBoot = true;
+    };
+
+  fileSystems."/persist" =
+    {
+      device = "rpool/safe/persist";
+      fsType = "zfs";
+      options = [ "noatime" ];
       neededForBoot = true;
     };
 

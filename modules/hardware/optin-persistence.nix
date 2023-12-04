@@ -17,6 +17,7 @@ in {
         "/var/lib/systemd"
         "/var/lib/bluetooth"
         "/var/lib/nixos"
+        "/etc/adjtime"
         "/etc/NetworkManager/system-connections"
       ];
       files = [
@@ -30,24 +31,24 @@ in {
     programs.fuse.userAllowOther = true;
 
     # Home Persistence
-    home.persistence."/persist/home/${config.user.name}" = {
-      directories = [
-        "Documents"
-        "Downloads"
-        "Pictures"
-        "Videos"
-        "Music"
-        ".ssh"
-        ".gnupg"
-        "dotfiles"
-        ".local/share/keyrings"
-        ".local/share/direnv"
-        ".local/share/fonts"
-      ];
-      files = [
-        ".local/share/bash/history"
-      ];
-      allowOther = true;
-    };
+    #home.persistence."/persist/home/${config.user.name}" = {
+    #   directories = [
+    #     "Documents"
+    #     "Downloads"
+    #     "Pictures"
+    #     "Videos"
+    #     "Music"
+    #     ".ssh"
+    #     ".gnupg"
+    #     "dotfiles"
+    #     ".local/share/keyrings"
+    #     ".local/share/direnv"
+    #     ".local/share/fonts"
+    #   ];
+    #   files = [
+    #     ".local/share/bash/history"
+    #   ];
+    #   allowOther = true;
+    # };
   };
 }

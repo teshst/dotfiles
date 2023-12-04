@@ -43,7 +43,7 @@ with lib.my;
       unitConfig.DefaultDependencies = "no";
       serviceConfig.type = "oneshot";
       script = ''
-        zfs rollback -r rpool/root@blank && echo "rollback complete"
+        zfs rollback -r rpool/local/root@blank && echo "rollback complete"
       '';
     };
   };

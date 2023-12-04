@@ -76,11 +76,11 @@ in
       };
     };
 
-    home.persistence."/persist/home/${config.user.name}" = {
-      directories = [
-        ".config/emacs"
-        ".config/doom"
-      ];
-    };
+    # home.persistence."/persist/home/${config.user.name}" = {
+    #   directories = [
+    #     ".config/emacs"
+    #     ".config/doom"
+    #   ];
+    # };
   };
 }

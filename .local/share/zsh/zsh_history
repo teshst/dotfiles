@@ -5,3 +5,10 @@
 : 1701654358:0;sudo nixos-rebuild switch --flake .#seth-laptop
 : 1701654480:0;git push
 : 1701654489:0;git add .
+: 1701654493:0;git commit -m "updated home-manager and emacs"
+: 1701654497:0;git push
+: 1701654499:0;ls
+: 1701654506:0;ls lib
+: 1701656260:0;sudo cp -r {,/persist}etc/adjtime
+: 1701656266:0;sudo cp -r {,/persist}/etc/adjtime
+: 1701659955:0;git add .
