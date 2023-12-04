@@ -39,11 +39,10 @@ in {
         "Music"
         ".ssh"
         ".gnupg"
-        "nix-config"
-				"dotfiles"
+        "dotfiles"
         ".local/share/keyrings"
         ".local/share/direnv"
-				".local/share/fonts"
+        ".local/share/fonts"
       ];
       files = [
         ".local/share/bash/history"

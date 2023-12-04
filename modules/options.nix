@@ -87,6 +87,7 @@ with lib.my;
       };
     };
 
+    home.programs.home-manager.enable = true;
     users.users.${config.user.name} = mkAliasDefinitions options.user;
 
     nix.settings = let users = [ config.user.name ]; in {
