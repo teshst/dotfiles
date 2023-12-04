@@ -15,9 +15,10 @@ in
     nixpkgs.overlays = [ inputs.emacs-overlay.overlay ];
 
     environment.systemPackages = with pkgs; [
-      # required dependencies
+
+      ((emacsPackagesFor emacs-unstable).emacsWithPackages
+        (epkgs: [ epkgs.vterm ])) # required dependencies
       git
-			emacs-git
       ripgrep
 
       # optional dependencies
@@ -54,18 +55,14 @@ in
       # :python
       python3
 
+      libtool
     ];
 
     env.PATH = [ "$XDG_CONFIG_HOME/emacs/bin" ];
 
     fonts.packages = [ pkgs.emacs-all-the-icons-fonts ];
 
-    home.services.emacs = {
-      enable = true;
-      defaultEditor = true;
-			socketActivation.enable = true;
-      package = pkgs.emacs-git;
-    };
+    services.emacs.enable = true;
 
     system.userActivationScripts = {
       # Installation Script on Rebuild

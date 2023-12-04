@@ -28,9 +28,29 @@ with lib.my;
     systemd-boot.enable = true;
   };
 
-  boot.initrd.postDeviceCommands = lib.mkAfter ''
-    zfs rollback -r rpool/root@blank
-  '';
+  boot.initrd.systemd = {
+    enable = true;
+    services.rollback = {
+      description = "Rollback ZFS datasets to a prisitine state";
+      wantedBy = [ "initrd.target" ];
+      after = [
+        "systemd-cryptsetup@crypt.service"
+        "zfs-import-rpool.service"
+      ];
+      before = [
+        "sysroot.mount"
+      ];
+      unitConfig.DefaultDependencies = "no";
+      serviceConfig.type = "oneshot";
+      script = ''
+        zfs rollback -r rpool/root@blank && echo "rollback complete"
+      '';
+    };
+  };
+
+  # boot.initrd.postDeviceCommands = lib.mkAfter ''
+  #   zfs rollback -r rpool/root@blank
+  # '';
 
   security.sudo.extraConfig = ''
     # rollback results in sudo lectures after each reboot
