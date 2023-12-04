@@ -1,3 +1,7 @@
 : 1701654319:0;git add .
 : 1701654336:0;git commit -m "updated home-manager and emacs"
 : 1701654340:0;git add .
+: 1701654342:0;git commit -m "updated home-manager and emacs"
+: 1701654358:0;sudo nixos-rebuild switch --flake .#seth-laptop
+: 1701654480:0;git push
+: 1701654489:0;git add .
