@@ -24,3 +24,7 @@
 : 1701936344:0;git branch --set-upstream-to=origin/main main
 : 1701936375:0;sudo cp -r /etc/dotfiles ../
 : 1701936378:0;git add .
+: 1701936381:0;git commit -m "refactor"
+: 1701936389:0;git push
+: 1701936457:0;sudo rm modules/hardware/boot/ephemeral-zfs.nix
+: 1701936461:0;git add .
