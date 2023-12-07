@@ -1,15 +1,6 @@
 {
   description = "My custom nix config";
 
-  nixConfig.substituters = [
-    "https://cache.nixos.org"
-    "https://nix-community.cachix.org"
-  ];
-  nixConfig.trusted-public-keys = [
-    "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  ];
-
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -67,12 +58,15 @@
           my = self.packages."${system}";
         };
 
-			overlays.custom = 
-					final:prev:
-					(mapModules ./overlays import);
+      overlays.custom =
+        final: prev:
+          (mapModules ./overlays import);
 
-      packages."${system}" = mapModules ./packages (p: pkgs.callPackage p {});
-      devShells."${system}".default = import ./shell.nix { inherit pkgs; };
+      packages."${system}" =
+        mapModules ./packages (p: pkgs.callPackage p {});
+
+      devShells."${system}".default =
+        import ./shell.nix { inherit pkgs; };
 
       nixosModules =  
         { dotfiles = import ./.; } // mapModulesRec ./modules import;
@@ -81,6 +75,12 @@
       nixosConfigurations =
         mapHosts ./hosts { };
 
-      templates = mapModules ./templates import;
+      templates = {
+        full = {
+          path = ./.;
+          description = "A grossly incandescent nixos config";
+        };
+      } // import ./templates;
+      defaultTemplate = self.templates.full;
     };
 }

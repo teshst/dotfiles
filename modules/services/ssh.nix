@@ -4,9 +4,7 @@ with lib;
 with lib.my;
 let cfg = config.modules.services.ssh;
 in {
-  options.modules.services.ssh = {
-    enable = mkBoolOpt false;
-  };
+  options.modules.services.ssh = { enable = mkBoolOpt false; };
 
   config = mkIf cfg.enable {
     services.openssh = {
@@ -15,6 +13,16 @@ in {
         PermitRootLogin = "no";
         PasswordAuthentication = false;
       };
+    };
+
+    environment.persistence."/persist" = {
+      hideMounts = true;
+      files = [
+        "/etc/ssh/ssh_host_rsa_key"
+        "/etc/ssh/ssh_host_rsa_key.pub"
+        "/etc/ssh/ssh_host_ed25519_key"
+        "/etc/ssh/ssh_host_ed25519_key.pub"
+      ];
     };
   };
 }

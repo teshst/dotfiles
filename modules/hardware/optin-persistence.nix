@@ -14,24 +14,37 @@ in {
       hideMounts = true;
       directories = [
         "/var/log"
-        "/var/lib/systemd"
-        "/var/lib/bluetooth"
-        "/var/lib/nixos"
-        "/etc/adjtime"
+	"/var/lib/bluetooth"
+      	"/var/lib/nixos"
+      	"/var/lib/systemd/coredump"
         "/etc/NetworkManager/system-connections"
+      	{ directory = "/var/lib/colord"; user = "colord"; group = "colord"; mode = "u=rwx,g=rx,o="; }
       ];
       files = [
         "/etc/machine-id"
-        "/etc/ssh/ssh_host_rsa_key"
-        "/etc/ssh/ssh_host_rsa_key.pub"
-        "/etc/ssh/ssh_host_ed25519_key"
-        "/etc/ssh/ssh_host_ed25519_key.pub"
+        "/var/lib/NetworkManager/secret_key"
+        "/var/lib/NetworkManager/seen-bssids"
+        "/var/lib/NetworkManager/timestamps"
+	{ file = "/etc/nix/id_rsa"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
       ];
+      users.${config.user.name} = {
+        directories = [
+          "Downloads"
+          "Music"
+          "Pictures"
+          "Documents"
+          "Videos"
+          { directory = ".gnupg"; mode = "0700"; }
+          { directory = ".ssh"; mode = "0700"; }
+          { directory = "dotfiles"; mode = "0700"; }
+        ];
+        files = [ ".screenrc" ".local/share/bash/history" ];
+      };
     };
     programs.fuse.userAllowOther = true;
 
     # Home Persistence
-    #home.persistence."/persist/home/${config.user.name}" = {
+    # home.persistence."/persist/home/${config.user.name}" = {
     #   directories = [
     #     "Documents"
     #     "Downloads"
@@ -41,14 +54,11 @@ in {
     #     ".ssh"
     #     ".gnupg"
     #     "dotfiles"
-    #     ".local/share/keyrings"
-    #     ".local/share/direnv"
     #     ".local/share/fonts"
+    #     ".local/bin"
     #   ];
-    #   files = [
-    #     ".local/share/bash/history"
-    #   ];
+    #   files = [ ".local/share/bash/history" ];
     #   allowOther = true;
-    # };
+    #};
   };
 }

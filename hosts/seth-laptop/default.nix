@@ -2,25 +2,28 @@
 
 {
 
-  imports = [
-    ../home.nix
-    ./hardware-configuration.nix
+  imports = [ 
+   inputs.hardware.nixosModules.omen-16-n0005ne
 
-    #inputs.hardware.nixosModules.omen-16-n0005ne
-  ];
+   ../home.nix 
+   ./hardware-configuration.nix 
+ ];
 
   modules = {
+    users = { user.enable = true; };
     hardware = {
       audio.enable = true;
       bluetooth.enable = true;
-      fs.enable = true;
+      fs = {
+        enable = true;
+	ssd.enable = true; 
+      };
       optin-persistence.enable = true;
     };
     desktop = {
       gnome.enable = true;
-      browsers = {
-        firefox.enable = true;
-      };
+      browsers = { firefox.enable = true; };
+      components = { fonts.enable = true; };
     };
     editors = {
       default = "nvim";
@@ -32,9 +35,7 @@
       git.enable = true;
       gnupg.enable = true;
     };
-    services = {
-      ssh.enable = true;
-    };
+    services = { ssh.enable = true; };
   };
 
   ## Local config
@@ -42,7 +43,6 @@
   services.openssh.startWhenNeeded = true;
 
   networking.networkmanager.enable = true;
-  networking.hostId = "1d396c91";
 
   time.timeZone = "America/Boise";
 

@@ -12,3 +12,15 @@
 : 1701656260:0;sudo cp -r {,/persist}etc/adjtime
 : 1701656266:0;sudo cp -r {,/persist}/etc/adjtime
 : 1701659955:0;git add .
+: 1701936254:0;git init
+: 1701936261:0;git branch -m main
+: 1701936267:0;git remote add origin git@github.com:teshst/dotfiles.git
+: 1701936311:0;git branch --set-upstream-to=origin/main main
+: 1701936322:0;git add .
+: 1701936324:0;git commit -m "refactor"
+: 1701936327:2;git pull
+: 1701936338:1;git pull origin main
+: 1701936341:0;ls
+: 1701936344:0;git branch --set-upstream-to=origin/main main
+: 1701936375:0;sudo cp -r /etc/dotfiles ../
+: 1701936378:0;git add .

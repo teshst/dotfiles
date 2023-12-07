@@ -11,51 +11,18 @@ with lib.my;
     ]
     # All my personal modules
     ++ (mapModulesRec' (toString ./modules) import);
+	
+  boot.supportedFilesystems = [ "btrfs" ];
+
+  boot.loader = {
+     efi = {
+       canTouchEfiVariables = true;
+     };
+     systemd-boot.enable = true;
+  };
 
   environment.variables.DOTFILES = config.dotfiles.dir;
   environment.variables.DOTFILES_BIN = config.dotfiles.binDir;
-
-  networking.hostId = lib.mkDefault "1d396c91";
-  xdg.portal.enable = true;
-
-  boot.supportedFilesystems = [ "zfs" ];
-
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
-    };
-    systemd-boot.enable = true;
-  };
-
-  boot.initrd.systemd = {
-    enable = true;
-    services.rollback = {
-      description = "Rollback ZFS datasets to a prisitine state";
-      wantedBy = [ "initrd.target" ];
-      after = [
-        "systemd-cryptsetup@crypt.service"
-        "zfs-import-rpool.service"
-      ];
-      before = [
-        "sysroot.mount"
-      ];
-      unitConfig.DefaultDependencies = "no";
-      serviceConfig.type = "oneshot";
-      script = ''
-        zfs rollback -r rpool/local/root@blank && echo "rollback complete"
-      '';
-    };
-  };
-
-  # boot.initrd.postDeviceCommands = lib.mkAfter ''
-  #   zfs rollback -r rpool/root@blank
-  # '';
-
-  security.sudo.extraConfig = ''
-    # rollback results in sudo lectures after each reboot
-    Defaults lecture = never
-  '';
 
   environment.variables.NIXPKGS_ALLOW_UNFREE = "1";
   nix =
@@ -73,17 +40,22 @@ with lib.my;
       ];
       registry = registryInputs // { dotfiles.flake = inputs.self; };
       settings = {
+        substituters = [
+          "https://nix-community.cachix.org"
+        ];
+        trusted-public-keys = [
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        ];
         auto-optimise-store = true;
       };
     };
-
   system.configurationRevision = with inputs; mkIf (self ? rev) self.rev;
-  system.stateVersion = "23.05";
+  system.stateVersion = "23.11";
 
   ## Some reasonable, global defaults
   # This is here to appease 'nix flake check' for generic hosts with no
   # hardware-configuration.nix or fileSystem config.
-  fileSystems."/".device = mkDefault "/dev/disk/by-label/crypt";
+  fileSystems."/".device = mkDefault "/dev/disk/by-label/root";
 
   environment.systemPackages = with pkgs; [
     cached-nix-shell
@@ -95,5 +67,4 @@ with lib.my;
     nixpkgs-fmt
     cmake
   ];
-
 }

@@ -4,42 +4,47 @@ with lib;
 with lib.my;
 let cfg = config.modules.desktop.gnome;
 in {
-  options.modules.desktop.gnome = {
-    enable = mkBoolOpt false;
-  };
+  options.modules.desktop.gnome = { enable = mkBoolOpt false; };
 
   config = mkIf cfg.enable {
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.desktopManager.gnome.enable = true;
-		
-		services.gnome.gnome-keyring.enable = true;
-		security.pam.services.gdm.enableGnomeKeyring = true;
+    services.gnome.gnome-keyring.enable = true;
+    security.pam.services.gdm.enableGnomeKeyring = true;
+
+    services.power-profiles-daemon.enable = false;
+    services.geoclue2.enable = true;
+
+    hardware.opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
 
     environment = {
-      systemPackages = with pkgs; [
+      systemPackages = with pkgs;
+        [
 
-      ] ++ (with pkgs.gnomeExtensions; [
-        appindicator
-        caffeine
-        blur-my-shell
-        just-perfection
-        clipboard-indicator
-      ]);
-
-      gnome.excludePackages = with pkgs; [
-        gnome-tour
-      ] ++ (with pkgs.gnome; [
-        cheese # webcam tool
-        gnome-terminal
-        epiphany # web browser
-        geary # email reader
-        gnome-characters
-        tali # poker game
-        iagno # go game
-        hitori # sudoku game
-        atomix # puzzle game
-      ]);
+        ] ++ (with pkgs.gnomeExtensions; [
+          appindicator
+          caffeine
+          blur-my-shell
+          just-perfection
+          clipboard-indicator
+        ]);
+      gnome.excludePackages = with pkgs;
+        [ gnome-tour ] ++ (with pkgs.gnome; [
+          cheese # webcam tool
+          gnome-terminal
+          epiphany # web browser
+          geary # email reader
+          gnome-characters
+          tali # poker game
+          iagno # go game
+          hitori # sudoku game
+          atomix # puzzle game
+        ]);
     };
 
     programs.dconf = {
