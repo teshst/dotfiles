@@ -9,9 +9,9 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # RM Existing Files
 rm $HOME/.bashrc
 rm $HOME/.zshrc
-rm $HOME/.config/nvm
-rm $HOME/.config/kitty
-rm $HOME/.config/zsh
+rm -rf $HOME/.config/nvm
+rm -rf $HOME/.config/kitty
+rm -rf $HOME/.config/zsh
 
 # Load Files
 config checkout
