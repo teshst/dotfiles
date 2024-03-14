@@ -1,0 +1,30 @@
+# Comp Init
+autoload -Uz compinit
+compinit
+
+# Zinit Setup
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd nomatch
+unsetopt beep extendedglob notify
+bindkey -e
+
+# End of lines added by compinstall
+
+# Set Default Editors
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+# Aliases
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias vi='nvim'
