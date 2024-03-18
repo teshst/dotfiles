@@ -79,10 +79,10 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook))
-;; Set the title
-(setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
-;; Content is not centered by default. To center, set
-(setq dashboard-center-content t)
+  ;; Set the title
+  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
+  ;; Content is not centered by default. To center, set
+  (setq dashboard-center-content t)
 
 
 (custom-set-variables
