@@ -20,6 +20,8 @@ unsetopt beep extendedglob notify
 bindkey -e
 
 # End of lines added by compinstall
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
 
 # Set Default Editors
 export EDITOR='emacsclient -t'
