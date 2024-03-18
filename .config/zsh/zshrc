@@ -22,8 +22,8 @@ bindkey -e
 # End of lines added by compinstall
 
 # Set Default Editors
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='emacsclient -t'
+export VISUAL='emacsclient -t'
 
 # Aliases
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
