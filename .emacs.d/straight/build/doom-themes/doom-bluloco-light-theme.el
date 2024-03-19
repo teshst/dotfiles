@@ -1,1 +1,0 @@
-/home/seth/.emacs.d/straight/repos/themes/themes/doom-bluloco-light-theme.el

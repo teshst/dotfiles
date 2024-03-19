@@ -1,1 +1,0 @@
-/home/seth/.emacs.d/straight/repos/seq/seq.el
