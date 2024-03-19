@@ -1,9 +1,1 @@
-Untracked files:
-.cfg
-
-.emacs.d/straight/
-.emacs.d/eln-cache/
-.emacs.d/recentf
-.emacs.d/init.el~
-.emacs.d/early-init.el~
-.emacs.d/bookmarks~
+".cfg"
