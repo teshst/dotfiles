@@ -3,7 +3,7 @@
 
 "29.2.50"
 
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ("2024-03-17 21:50:10" ("emacs") (:type git :host github :repo "radian-software/straight.el" :files ("straight*.el") :branch "develop" :package "straight" :local-repo "straight.el")) "org-elpa" ("2024-03-17 21:50:10" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2024-03-17 21:50:10" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2024-03-17 21:50:10" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "nongnu-elpa" ("2024-03-17 21:50:10" nil (:type git :repo "https://git.savannah.gnu.org/git/emacs/nongnu.git" :depth (full single-branch) :local-repo "nongnu-elpa" :build nil :package "nongnu-elpa")) "el-get" ("2024-03-17 21:50:10" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2024-03-17 21:50:10" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "use-package" ("2024-03-17 21:50:10" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2024-03-17 21:50:10" ("emacs") (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "which-key" ("2024-03-17 21:50:10" ("emacs") (:type git :flavor melpa :host github :repo "justbur/emacs-which-key" :package "which-key" :local-repo "emacs-which-key")) "all-the-icons" ("2024-03-17 21:50:10" ("emacs") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "doom-themes" ("2024-03-17 21:50:10" ("emacs" "cl-lib") (:type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes" :package "doom-themes" :local-repo "themes")) "nerd-icons" ("2024-03-17 21:50:10" ("emacs") (:type git :flavor melpa :files (:defaults "data" "nerd-icons-pkg.el") :host github :repo "rainstormstudio/nerd-icons.el" :package "nerd-icons" :local-repo "nerd-icons.el")) "page-break-lines" ("2024-03-17 21:50:10" ("emacs") (:type git :flavor melpa :host github :repo "purcell/page-break-lines" :package "page-break-lines" :local-repo "page-break-lines")) "projectile" ("2024-03-17 21:50:10" ("emacs") (:type git :flavor melpa :host github :repo "bbatsov/projectile" :package "projectile" :local-repo "projectile")) "dashboard" ("2024-03-17 21:50:10" ("emacs") (:type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard" :package "dashboard" :local-repo "emacs-dashboard"))))
+#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ("2024-03-18 20:07:37" ("emacs") (:type git :host github :repo "radian-software/straight.el" :files ("straight*.el") :branch "develop" :package "straight" :local-repo "straight.el")) "org-elpa" ("2024-03-18 20:07:37" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2024-03-18 20:07:37" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2024-03-18 20:07:37" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "nongnu-elpa" ("2024-03-18 20:07:37" nil (:type git :repo "https://git.savannah.gnu.org/git/emacs/nongnu.git" :depth (full single-branch) :local-repo "nongnu-elpa" :build nil :package "nongnu-elpa")) "el-get" ("2024-03-18 20:07:37" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2024-03-18 20:07:37" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "use-package" ("2024-03-18 20:07:37" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2024-03-18 20:07:37" ("emacs") (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "which-key" ("2024-03-18 20:07:37" ("emacs") (:type git :flavor melpa :host github :repo "justbur/emacs-which-key" :package "which-key" :local-repo "emacs-which-key")) "all-the-icons" ("2024-03-18 20:07:37" ("emacs") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "doom-themes" ("2024-03-18 20:07:37" ("emacs" "cl-lib") (:type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes" :package "doom-themes" :local-repo "themes")) "nerd-icons" ("2024-03-18 20:07:37" ("emacs") (:type git :flavor melpa :files (:defaults "data" "nerd-icons-pkg.el") :host github :repo "rainstormstudio/nerd-icons.el" :package "nerd-icons" :local-repo "nerd-icons.el")) "page-break-lines" ("2024-03-18 20:07:38" ("emacs") (:type git :flavor melpa :host github :repo "purcell/page-break-lines" :package "page-break-lines" :local-repo "page-break-lines")) "projectile" ("2024-03-18 20:07:38" ("emacs") (:type git :flavor melpa :host github :repo "bbatsov/projectile" :package "projectile" :local-repo "projectile")) "dashboard" ("2024-03-18 20:07:38" ("emacs") (:type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard" :package "dashboard" :local-repo "emacs-dashboard")) "comment-tags" ("2024-03-18 20:07:37" ("emacs") (:type git :flavor melpa :host github :repo "vincekd/comment-tags" :package "comment-tags" :local-repo "comment-tags")) "org-super-agenda" ("2024-03-18 20:07:37" ("emacs" "compat" "s" "dash" "org" "ht" "ts") (:type git :flavor melpa :host github :repo "alphapapa/org-super-agenda" :package "org-super-agenda" :local-repo "org-super-agenda")) "compat" ("2024-03-18 20:07:37" ("emacs" "seq") (:type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git")) :package "compat" :local-repo "compat")) "seq" ("2024-03-18 20:07:37" nil (:type git :host github :repo "emacs-straight/seq" :files ("*" (:exclude ".git")) :package "seq" :local-repo "seq")) "s" ("2024-03-18 20:07:37" nil (:type git :flavor melpa :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "dash" ("2024-03-18 20:07:37" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "org" ("2024-03-18 20:07:37" ("emacs") (:type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*")) :package "org")) "ht" ("2024-03-18 20:07:37" ("dash") (:type git :flavor melpa :host github :repo "Wilfred/ht.el" :package "ht" :local-repo "ht.el")) "ts" ("2024-03-18 20:07:37" ("emacs" "dash" "s") (:type git :flavor melpa :host github :repo "alphapapa/ts.el" :package "ts" :local-repo "ts.el"))))
 
 #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ((straight-autoloads straight straight-x straight-ert-print-hack) (autoload 'straight-remove-unused-repos "straight" "Remove unused repositories from the repos and build directories.
 A repo is considered \"unused\" if it was not explicitly requested via
@@ -1081,10 +1081,163 @@ Otherwise behave as if called interactively.
 
 (fn &optional ARG)" t) (define-obsolete-function-alias 'projectile-global-mode 'projectile-mode "1.0") (register-definition-prefixes "projectile" '("??" "compilation-find-file-projectile-find-compilation-buffer" "def-projectile-commander-method" "delete-file-projectile-remove-from-cache" "project" "savehist-additional-variables")) (provide 'projectile-autoloads)) "dashboard" ((dashboard-autoloads dashboard dashboard-widgets) (autoload 'dashboard-open "dashboard" "Open (or refresh) the *dashboard* buffer.
 
-(fn &rest _)" t) (autoload 'dashboard-setup-startup-hook "dashboard" "Setup post initialization hooks unless a command line argument is provided.") (register-definition-prefixes "dashboard" '("dashboard-")) (register-definition-prefixes "dashboard-widgets" '("dashboard-" "org-time-less-p" "recentf-list")) (provide 'dashboard-autoloads))))
+(fn &rest _)" t) (autoload 'dashboard-setup-startup-hook "dashboard" "Setup post initialization hooks unless a command line argument is provided.") (register-definition-prefixes "dashboard" '("dashboard-")) (register-definition-prefixes "dashboard-widgets" '("dashboard-" "org-time-less-p" "recentf-list")) (provide 'dashboard-autoloads)) "comment-tags" ((comment-tags-autoloads comment-tags) (autoload 'comment-tags-list-tags-buffer "comment-tags" "List all tags in the current buffer." t) (autoload 'comment-tags-find-tags-buffer "comment-tags" "Complete tags in the current buffer and jump to line." t) (autoload 'comment-tags-list-tags-buffers "comment-tags" "List tags for all open buffers." t) (autoload 'comment-tags-next-tag "comment-tags" "Jump to next comment-tag from point." t) (autoload 'comment-tags-previous-tag "comment-tags" "Jump to previous comment-tag from point." t) (autoload 'comment-tags-mode "comment-tags" "Highlight and navigate comment tags.
 
-#s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 15 "melpa" nil "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "which-key" nil "all-the-icons" nil "doom-themes" nil "cl-lib" nil "nerd-icons" nil "page-break-lines" nil "projectile" nil "dashboard" nil)) melpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "which-key" (which-key :type git :flavor melpa :host github :repo "justbur/emacs-which-key") "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el") "doom-themes" (doom-themes :type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes") "cl-lib" nil "nerd-icons" (nerd-icons :type git :flavor melpa :files (:defaults "data" "nerd-icons-pkg.el") :host github :repo "rainstormstudio/nerd-icons.el") "page-break-lines" (page-break-lines :type git :flavor melpa :host github :repo "purcell/page-break-lines") "projectile" (projectile :type git :flavor melpa :host github :repo "bbatsov/projectile") "dashboard" (dashboard :type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard"))) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "nongnu-elpa" nil "emacsmirror-mirror" nil "straight" nil "cl-lib" nil)) nongnu-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 4 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil)) el-get #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil)) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil))))
+This is a minor mode.  If called interactively, toggle the
+`Comment-Tags mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
 
-("dashboard" "projectile" "page-break-lines" "cl-lib" "doom-themes" "nerd-icons" "all-the-icons" "which-key" "bind-key" "use-package" "emacs" "straight" "emacsmirror-mirror" "el-get" "nongnu-elpa" "gnu-elpa-mirror" "melpa" "org-elpa")
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `comment-tags-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t) (register-definition-prefixes "comment-tags" '("comment-tags-")) (provide 'comment-tags-autoloads)) "seq" ((seq-autoloads seq seq-25 seq-24) (register-definition-prefixes "seq-24" '("seq")) (autoload 'seq-subseq "seq-25" "Return the sequence of elements of SEQUENCE from START to END.
+END is exclusive.
+
+If END is omitted, it defaults to the length of the sequence.  If
+START or END is negative, it counts from the end.  Signal an
+error if START or END are outside of the sequence (i.e too large
+if positive or too small if negative).
+
+(fn SEQUENCE START &optional END)") (autoload 'seq-take "seq-25" "Return the sequence made of the first N elements of SEQUENCE.
+The result is a sequence of the same type as SEQUENCE.
+
+If N is a negative integer or zero, an empty sequence is
+returned.
+
+(fn SEQUENCE N)") (autoload 'seq-sort-by "seq-25" "Sort SEQUENCE transformed by FUNCTION using PRED as the comparison function.
+Elements of SEQUENCE are transformed by FUNCTION before being
+sorted.  FUNCTION must be a function of one argument.
+
+(fn FUNCTION PRED SEQUENCE)") (autoload 'seq-filter "seq-25" "Return a list of all the elements in SEQUENCE for which PRED returns non-nil.
+
+(fn PRED SEQUENCE)") (autoload 'seq-remove "seq-25" "Return a list of all the elements in SEQUENCE for which PRED returns nil.
+
+(fn PRED SEQUENCE)") (autoload 'seq-remove-at-position "seq-25" "Return a copy of SEQUENCE with the element at index N removed.
+
+N is the (zero-based) index of the element that should not be in
+the result.
+
+The result is a sequence of the same type as SEQUENCE.
+
+(fn SEQUENCE N)") (autoload 'seq-reduce "seq-25" "Reduce the function FUNCTION across SEQUENCE, starting with INITIAL-VALUE.
+
+Return the result of calling FUNCTION with INITIAL-VALUE and the
+first element of SEQUENCE, then calling FUNCTION with that result
+and the second element of SEQUENCE, then with that result and the
+third element of SEQUENCE, etc.  FUNCTION will be called with
+INITIAL-VALUE (and then the accumulated value) as the first
+argument, and the elements from SEQUENCE as the second argument.
+
+If SEQUENCE is empty, return INITIAL-VALUE and FUNCTION is not called.
+
+(fn FUNCTION SEQUENCE INITIAL-VALUE)") (autoload 'seq-every-p "seq-25" "Return non-nil if PRED returns non-nil for all the elements of SEQUENCE.
+
+(fn PRED SEQUENCE)") (autoload 'seq-some "seq-25" "Return non-nil if PRED returns non-nil for at least one element of SEQUENCE.
+If the value is non-nil, it is the first non-nil value returned by PRED.
+
+(fn PRED SEQUENCE)") (autoload 'seq-find "seq-25" "Return the first element in SEQUENCE for which PRED returns non-nil.
+If no such element is found, return DEFAULT.
+
+Note that `seq-find' has an ambiguity if the found element is
+identical to DEFAULT, as in that case it is impossible to know
+whether an element was found or not.
+
+(fn PRED SEQUENCE &optional DEFAULT)") (autoload 'seq-position "seq-25" "Return the (zero-based) index of the first element in SEQUENCE \"equal\" to ELT.
+\"Equality\" is defined by the function TESTFN, which defaults to `equal'.
+
+(fn SEQUENCE ELT &optional TESTFN)") (autoload 'seq-positions "seq-25" "Return list of indices of SEQUENCE elements for which TESTFN returns non-nil.
+
+TESTFN is a two-argument function which is called with each element of
+SEQUENCE as the first argument and ELT as the second.
+TESTFN defaults to `equal'.
+
+The result is a list of (zero-based) indices.
+
+(fn SEQUENCE ELT &optional TESTFN)") (autoload 'seq-uniq "seq-25" "Return a list of the elements of SEQUENCE with duplicates removed.
+TESTFN is used to compare elements, and defaults to `equal'.
+
+(fn SEQUENCE &optional TESTFN)") (autoload 'seq-union "seq-25" "Return a list of all the elements that appear in either SEQUENCE1 or SEQUENCE2.
+\"Equality\" of elements is defined by the function TESTFN, which
+defaults to `equal'.
+
+(fn SEQUENCE1 SEQUENCE2 &optional TESTFN)") (autoload 'seq-intersection "seq-25" "Return a list of all the elements that appear in both SEQUENCE1 and SEQUENCE2.
+\"Equality\" of elements is defined by the function TESTFN, which
+defaults to `equal'.
+
+(fn SEQUENCE1 SEQUENCE2 &optional TESTFN)") (autoload 'seq-group-by "seq-25" "Apply FUNCTION to each element of SEQUENCE.
+Separate the elements of SEQUENCE into an alist using the results as
+keys.  Keys are compared using `equal'.
+
+(fn FUNCTION SEQUENCE)") (autoload 'seq-max "seq-25" "Return the largest element of SEQUENCE.
+SEQUENCE must be a sequence of numbers or markers.
+
+(fn SEQUENCE)") (autoload 'seq-random-elt "seq-25" "Return a randomly chosen element from SEQUENCE.
+Signal an error if SEQUENCE is empty.
+
+(fn SEQUENCE)") (register-definition-prefixes "seq-25" '("seq-")) (provide 'seq-autoloads)) "compat" ((compat-autoloads compat compat-tests compat-macs compat-29 compat-28 compat-27 compat-26 compat-25) (register-definition-prefixes "compat" '("compat-")) (register-definition-prefixes "compat-macs" '("compat-")) (register-definition-prefixes "compat-tests" '("compat-tests--" "should-equal")) (provide 'compat-autoloads)) "s" ((s-autoloads s) (register-definition-prefixes "s" '("s-")) (provide 's-autoloads)) "dash" ((dash-autoloads dash) (autoload 'dash-fontify-mode "dash" "Toggle fontification of Dash special variables.
+
+Dash-Fontify mode is a buffer-local minor mode intended for Emacs
+Lisp buffers.  Enabling it causes the special variables bound in
+anaphoric Dash macros to be fontified.  These anaphoras include
+`it', `it-index', `acc', and `other'.  In older Emacs versions
+which do not dynamically detect macros, Dash-Fontify mode
+additionally fontifies Dash macro calls.
+
+See also `dash-fontify-mode-lighter' and
+`global-dash-fontify-mode'.
+
+This is a minor mode.  If called interactively, toggle the
+`Dash-Fontify mode' mode.  If the prefix argument is positive,
+enable the mode, and if it is zero or negative, disable the mode.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.  Enable
+the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+To check whether the minor mode is enabled in the current buffer,
+evaluate `dash-fontify-mode'.
+
+The mode's hook is called both when the mode is enabled and when
+it is disabled.
+
+(fn &optional ARG)" t) (put 'global-dash-fontify-mode 'globalized-minor-mode t) (defvar global-dash-fontify-mode nil "Non-nil if Global Dash-Fontify mode is enabled.
+See the `global-dash-fontify-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-dash-fontify-mode'.") (custom-autoload 'global-dash-fontify-mode "dash" nil) (autoload 'global-dash-fontify-mode "dash" "Toggle Dash-Fontify mode in all buffers.
+With prefix ARG, enable Global Dash-Fontify mode if ARG is positive;
+otherwise, disable it.
+
+If called from Lisp, toggle the mode if ARG is `toggle'.
+Enable the mode if ARG is nil, omitted, or is a positive number.
+Disable the mode if ARG is a negative number.
+
+Dash-Fontify mode is enabled in all buffers where
+`dash--turn-on-fontify-mode' would do it.
+
+See `dash-fontify-mode' for more information on Dash-Fontify mode.
+
+(fn &optional ARG)" t) (autoload 'dash-register-info-lookup "dash" "Register the Dash Info manual with `info-lookup-symbol'.
+This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t) (register-definition-prefixes "dash" '("!cdr" "!cons" "--" "->" "-a" "-butlast" "-c" "-d" "-e" "-f" "-gr" "-i" "-juxt" "-keep" "-l" "-m" "-no" "-o" "-p" "-r" "-s" "-t" "-u" "-value-to-list" "-when-let" "-zip" "dash-")) (provide 'dash-autoloads)) "org" ((ox ox-texinfo ox-publish ox-org ox-odt ox-md ox-man ox-latex ox-koma-letter ox-icalendar ox-html ox-beamer ox-ascii org org-version org-timer org-tempo org-table org-src org-refile org-protocol org-plot org-persist org-pcomplete org-num org-mouse org-mobile org-macs org-macro org-loaddefs org-list org-lint org-keys org-inlinetask org-indent org-id org-habit org-goto org-footnote org-fold org-fold-core org-feed org-faces org-entities org-element org-element-ast org-duration org-datetree org-cycle org-ctags org-crypt org-compat org-colview org-clock org-capture org-attach org-attach-git org-archive org-agenda ol ol-w3m ol-rmail ol-mhe ol-man ol-irc ol-info ol-gnus ol-eww ol-eshell ol-doi ol-docview ol-bibtex ol-bbdb oc oc-natbib oc-csl oc-bibtex oc-biblatex oc-basic ob ob-tangle ob-table ob-sqlite ob-sql ob-shell ob-sed ob-screen ob-scheme ob-sass ob-ruby ob-ref ob-python ob-processing ob-plantuml ob-perl ob-org ob-octave ob-ocaml ob-maxima ob-matlab ob-makefile ob-lua ob-lob ob-lisp ob-lilypond ob-latex ob-julia ob-js ob-java ob-haskell ob-groovy ob-gnuplot ob-fortran ob-forth ob-exp ob-eval ob-eshell ob-emacs-lisp ob-dot ob-ditaa ob-css ob-core ob-comint ob-clojure ob-calc ob-awk ob-R ob-C)) "ht" ((ht-autoloads ht) (register-definition-prefixes "ht" 'nil) (provide 'ht-autoloads)) "ts" ((ts-autoloads ts) (register-definition-prefixes "ts" '("ts-" "ts<" "ts=" "ts>")) (provide 'ts-autoloads)) "org-super-agenda" ((org-super-agenda-autoloads org-super-agenda) (defvar org-super-agenda-mode nil "Non-nil if Org-Super-Agenda mode is enabled.
+See the `org-super-agenda-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `org-super-agenda-mode'.") (custom-autoload 'org-super-agenda-mode "org-super-agenda" nil) (autoload 'org-super-agenda-mode "org-super-agenda" "Group items in Org agenda views according to `org-super-agenda-groups'.
+With prefix argument ARG, turn on if positive, otherwise off.
+
+(fn &optional ARG)" t) (register-definition-prefixes "org-super-agenda" '("org-super-agenda-")) (provide 'org-super-agenda-autoloads))))
+
+#s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 15 "melpa" nil "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "which-key" nil "all-the-icons" nil "doom-themes" nil "cl-lib" nil "nerd-icons" nil "page-break-lines" nil "projectile" nil "dashboard" nil "comment-tags" nil "org-super-agenda" nil "compat" nil "seq" nil "s" nil "dash" nil "org" (org :type git :repo "https://git.savannah.gnu.org/git/emacs/org-mode.git" :local-repo "org" :depth full :pre-build (straight-recipes-org-elpa--build) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*"))) "ht" nil "ts" nil)) melpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "nongnu-elpa" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "which-key" (which-key :type git :flavor melpa :host github :repo "justbur/emacs-which-key") "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el") "doom-themes" (doom-themes :type git :flavor melpa :files (:defaults "themes/*.el" "themes/*/*.el" "extensions/*.el" "doom-themes-pkg.el") :host github :repo "doomemacs/themes") "cl-lib" nil "nerd-icons" (nerd-icons :type git :flavor melpa :files (:defaults "data" "nerd-icons-pkg.el") :host github :repo "rainstormstudio/nerd-icons.el") "page-break-lines" (page-break-lines :type git :flavor melpa :host github :repo "purcell/page-break-lines") "projectile" (projectile :type git :flavor melpa :host github :repo "bbatsov/projectile") "dashboard" (dashboard :type git :flavor melpa :files (:defaults "banners" "dashboard-pkg.el") :host github :repo "emacs-dashboard/emacs-dashboard") "comment-tags" (comment-tags :type git :flavor melpa :host github :repo "vincekd/comment-tags") "org-super-agenda" (org-super-agenda :type git :flavor melpa :host github :repo "alphapapa/org-super-agenda") "compat" nil "seq" nil "s" (s :type git :flavor melpa :host github :repo "magnars/s.el") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "ht" (ht :type git :flavor melpa :host github :repo "Wilfred/ht.el") "ts" (ts :type git :flavor melpa :host github :repo "alphapapa/ts.el"))) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "nongnu-elpa" nil "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "compat" (compat :type git :host github :repo "emacs-straight/compat" :files ("*" (:exclude ".git"))) "seq" (seq :type git :host github :repo "emacs-straight/seq" :files ("*" (:exclude ".git"))))) nongnu-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 4 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil)) el-get #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil)) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil))))
+
+("dashboard" "projectile" "page-break-lines" "cl-lib" "doom-themes" "nerd-icons" "all-the-icons" "which-key" "ts" "ht" "dash" "s" "seq" "compat" "org-super-agenda" "comment-tags" "org" "bind-key" "use-package" "emacs" "straight" "emacsmirror-mirror" "el-get" "nongnu-elpa" "gnu-elpa-mirror" "melpa" "org-elpa")
 
 t
