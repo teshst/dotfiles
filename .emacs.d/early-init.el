@@ -1,2 +1,2 @@
-;; Disable package.el in favor of straight.el
+;; Disable Package.el
 (setq package-enable-at-startup nil)
