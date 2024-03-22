@@ -47,34 +47,53 @@
 ;; Block until current queue processed.
 (elpaca-wait)
 
-;; which key
+;; Improve keyboard shortcut discoverability
 (use-package which-key
-     :ensure t
-     :config
-     (which-key-mode))
+  :ensure t
+  :demand t
+  :config
+  (which-key-mode))
 
-;; Vertico Completion
+;; Enable vertico
 (use-package vertico
   :ensure t
-  :config
+  :demand t
+  :bind (:map vertico-map
+         ("C-j" . vertico-next)
+         ("C-k" . vertico-previous)
+         ("C-f" . vertico-exit)
+         :map minibuffer-local-map
+         ("M-h" . backward-kill-word))
+  :custom
+  (vertico-cycle t)
+  :init
   (vertico-mode))
 
-;; Save history vertigo
-
+;; Persist history over Emacs restarts. Vertico sorts by history position.
 (savehist-mode)
 
-;; Metdata vertigo
+;; Dynamic Completions
+(use-package orderless
+  :after vertico
+  :ensure t
+  :demand t
+  :init
+  ;; Configure a custom style dispatcher (see the Consult wiki)
+  ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
+  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+
+;; Enable rich annotations using the Marginalia package
 (use-package marginalia
   :after vertico
   :ensure t
-  :config
+  :demand t
+  :custom
+  (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
+  :init
   (marginalia-mode))
-
-;; Move windows with arrow keys
-(global-set-key (kbd "C-c <left>")  'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-(global-set-key (kbd "C-c <up>")    'windmove-up)
-(global-set-key (kbd "C-c <down>")  'windmove-down)
 
 ;; Doom One Theme
 (use-package doom-themes
@@ -95,9 +114,25 @@
   :config
   (sml/setup))
 
+;; All the icons
+(use-package all-the-icons
+  :if (display-graphic-p)
+  :ensure t
+  :demand t
+  :config)
+
+(use-package all-the-icons-completion
+  :ensure t
+  :config
+  (all-the-icons-completion-mode)
+  (add-hook 'marginalia-mode-hook #'all-the-icons-completion-marginalia-setup))
+
 ;; Set initial size
 (add-to-list 'default-frame-alist '(height . 60))
 (add-to-list 'default-frame-alist '(width . 160))
+
+;; Set minimium warning level
+(setq warning-minimum-level :error)
 
 ;; Do not show the startup screen.
 (setq inhibit-startup-message t)
@@ -110,30 +145,53 @@
 ;; Use `command` as `meta` in macOS.
 (setq mac-command-modifier 'meta)
 
-;; All the icons
-(use-package all-the-icons
+;; Setup Org
+(use-package org
+  :ensure t)
+
+;; Must do this so the agenda knows where to look for my files
+(setq org-agenda-files '("~/org"))
+
+;; When a TODO is set to a done state, record a timestamp
+(setq org-log-done 'time)
+
+;; Follow the links
+(setq org-return-follows-link  t)
+
+;; Associate all org files with org mode
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+
+;; Make the indentation look nicer
+(add-hook 'org-mode-hook 'org-indent-mode)
+
+;; Shortcuts for storing links, viewing the agenda, and starting a capture
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cc" 'org-capture)
+
+;; Hide the markers so you just see bold text as BOLD-TEXT and not *BOLD-TEXT*
+(setq org-hide-emphasis-markers t)
+
+;; Wrap the lines in org mode so that things are easier to read
+(add-hook 'org-mode-hook 'visual-line-mode)
+
+;; Setup Org Roam
+(use-package org-roam
   :ensure t
-  :if (display-graphic-p))
+  :custom
+  (org-roam-directory "~/org/roam")
+  (org-roam-completion-everywhere t)
+  (org-roam-capture-templates
+   '("t" "Full Build Incident" plain (file "~/org/roam/templates/fbincident.org")
+    :target (file+head "${slug}.org" "#+title: ${title}\n")
+    :unnarrowed t))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert)
+         :map org-mode-map
+         ("C-M-i"    . completion-at-point))
+  :config
+  ;; If you're using a vertical completion framework, you might want a more informative completion interface
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode))
 
-;; Nerd fonts
-(use-package nerd-icons
-  :ensure t
-  )
-
-;; Block until current queue processed.
-(elpaca-wait)
-
-
-;; late load plugins
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(marginalia vertico)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
