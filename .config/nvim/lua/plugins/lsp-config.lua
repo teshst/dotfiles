@@ -43,10 +43,6 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      -- Setup lua
-      --require("plugins.lsp.lsp-lua")
-      --require("plugins.lsp.lsp-rust")
-    end,
+    config = function() end,
   },
 }
