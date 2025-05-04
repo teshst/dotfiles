@@ -6,5 +6,6 @@ return {
   opts = {
     buffdelete = { enabled = true },
     terminal = { enabled = true },
+    statuscolumn = { enabled = true },
   },
 }
