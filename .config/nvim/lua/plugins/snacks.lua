@@ -7,5 +7,6 @@ return {
     buffdelete = { enabled = true },
     terminal = { enabled = true },
     statuscolumn = { enabled = true },
+    toggle = { enabled = true },
   },
 }
