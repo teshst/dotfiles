@@ -1,13 +1,4 @@
 local map = vim.keymap.set
-local wk = require("which-key")
-
-wk.add({
-  { "<leader>f", group = "file" },
-  { "<leader>fn", "<cmd>enew<cr>", desc = "New File", mode = "n" },
-  { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
-  { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Search Files", mode = "n" },
-  { "<leader>b", "<cmd>Telescope buffers<cr>", group = "buffers"},
-})
 
 -- Move to window using the <ctrl> hjkl keys
 map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
@@ -44,6 +35,12 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- Neotree
 map("n", "<leader>n", "<cmd>Neotree toggle<cr>", { desc = "Toggle Neotree" })
+
+-- Telescope
+map('n', '<leader>ff', "<cmd>Telescope find_files<cr>", { desc = 'Telescope find files' })
+map('n', '<leader>fg', "<cmd>Telescope live_grep<cr>", { desc = 'Telescope live grep' })
+map('n', '<leader>fb', "<cmd>Telescope buffers<cr>", { desc = 'Telescope buffers' })
+map('n', '<leader>fh', "<cmd>Telescope help_tags<cr>", { desc = 'Telescope help tags' })
 
 -- Lsp
 map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
