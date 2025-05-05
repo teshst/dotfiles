@@ -29,19 +29,8 @@ autoload -Uz _zinit
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k
 
-# Load pure theme
-zinit ice pick"async.zsh" src"pure.zsh" # with zsh-async library that's bundled with it.
-zinit light sindresorhus/pure
-
-# Load starship theme
-# line 1: `starship` binary as command, from github release
-# line 2: starship setup at clone(create init.zsh, completion)
-# line 3: pull behavior same as clone, source init.zsh
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
@@ -53,5 +42,3 @@ zinit wait lucid light-mode for \
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
