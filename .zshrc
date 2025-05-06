@@ -10,7 +10,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd notify
 unsetopt beep
-bindkey -v
 
 zstyle :compinstall filename '$HOME/.zshrc'
 
@@ -32,6 +31,10 @@ zinit light romkatv/powerlevel10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Vim mode
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
       zdharma-continuum/fast-syntax-highlighting \
@@ -41,4 +44,7 @@ zinit wait lucid light-mode for \
       zsh-users/zsh-completions
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+. "$HOME/.cargo/env"
 
+export EDITOR=nvim
+export VISUAL="$EDITOR"
