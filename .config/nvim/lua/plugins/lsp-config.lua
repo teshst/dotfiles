@@ -1,48 +1,38 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     config = function()
-      require("mason").setup()
+      require("mason").setup({})
     end,
   },
   {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = {
-      {
-        "mrcjkb/rustaceanvim",
-        version = "^6", -- Recommended
-        lazy = false, -- This plugin is already lazy
-      },
-    },
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
     config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "rust_analyzer" },
+      require("mason-tool-installer").setup({
+        ensure_installed = {
+          "lua_ls",
+          "stylua",
+          "vimls",
+          "rust_analyzer",
+          "codelldb",
+          "bash-language-server",
+          "shfmt",
+        },
+
+        auto_update = true
       })
-
-      require("mason-lspconfig").setup_handlers({
-
-        function(server_name) -- default handler
-          require("lspconfig")[server_name].setup({})
-        end,
-
-        ["rust_analyzer"] = function() end,
-        ["lua_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.lua_ls.setup({
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" },
-                },
-              },
-            },
-          })
-        end,
-      })
+    end
+  },
+  {
+    "mason-org/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup()
     end,
   },
   {
     "neovim/nvim-lspconfig",
-    config = function() end,
-  },
+    config = function()
+      require("lsp-configs.lua-lsp")
+    end
+  }
 }
