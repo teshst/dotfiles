@@ -13,6 +13,7 @@ return {
           "lua_ls",
           "stylua",
           "vimls",
+          "marksman",
           "rust_analyzer",
           "codelldb",
           "bash-language-server",
