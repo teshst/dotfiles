@@ -57,6 +57,3 @@ end, { desc = 'Terminal (cwd)' })
 -- Terminal Mappings
 map('t', '<C-/>', '<cmd>close<cr>', { desc = 'Hide Terminal' })
 map('t', '<c-_>', '<cmd>close<cr>', { desc = 'which_key_ignore' })
-
--- quit
-map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
