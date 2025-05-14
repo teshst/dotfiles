@@ -1,6 +1,17 @@
--- This file is automatically loaded by plugins.core
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+-- Hide deprecation warnings
+vim.g.deprecation_warnings = false
+
+-- Show the current document symbols location from Trouble in lualine
+-- You can disable this for a buffer by setting `vim.b.trouble_lualine = false`
+vim.g.trouble_lualine = true
+
+vim.g.have_nerd_font = true
 
 -- Hide deprecation warnings
 vim.g.deprecation_warnings = false
@@ -28,6 +39,11 @@ opt.fillchars = {
   diff = "╱",
   eob = " ",
 }
+opt.foldlevel = 99
+opt.formatexpr = "v:lua.require'conform'.formatexpr()"
+opt.formatoptions = "jcroqlnt" -- tcqj
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
 opt.ignorecase = true -- Ignore case
 opt.inccommand = "nosplit" -- preview incremental substitute
 opt.jumpoptions = "view"

@@ -4,9 +4,7 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    buffdelete = { enabled = true },
-    terminal = { enabled = true },
     statuscolumn = { enabled = true },
-    toggle = { enabled = true },
+    terminal = { enabled = true },
   },
 }
